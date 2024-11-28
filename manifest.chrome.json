@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "CS2 Case Stats - SteamTools",
+    "short_name": "CS2 Case Stats",
+    "description": "Provides detailed stats about opened cases on CS2",
+    "version": "1.0.0",
+    "author": "joaopugsley",
+    "icons": {
+        "16": "assets/icons/icon-16.png",
+        "48": "assets/icons/icon-48.png",
+        "128": "assets/icons/icon-128.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {},
+    "content_scripts": [
+        {
+            "matches": [
+                "https://steamcommunity.com/id/*/inventoryhistory/*",
+                "https://steamcommunity.com/profiles/*/inventoryhistory/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "styles/styles.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "templates/*"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

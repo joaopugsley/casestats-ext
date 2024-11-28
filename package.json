@@ -1,0 +1,29 @@
+{
+    "name": "casestats-ext",
+    "description": "Provides detailed stats about opened cases on CS2",
+    "version": "1.0.0",
+    "author": "joaopugsley",
+    "homepage": "https://github.com/joaopugsley/casestats-ext",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+        "dev:chrome": "cross-env BROWSER_TARGET=chrome webpack --mode development",
+        "build:chrome": "cross-env BROWSER_TARGET=chrome webpack --mode production"
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.24.5",
+        "@types/toastify-js": "^1.12.3",
+        "@types/webextension-polyfill": "^0.12.1",
+        "copy-webpack-plugin": "^12.0.2",
+        "cross-env": "^7.0.3",
+        "css-loader": "^7.1.2",
+        "mini-css-extract-plugin": "^2.9.2",
+        "sass": "^1.81.0",
+        "sass-loader": "^16.0.3",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.4.5",
+        "webextension-polyfill": "^0.12.0",
+        "webpack": "^5.91.0",
+        "webpack-cli": "^5.1.4"
+    }
+}

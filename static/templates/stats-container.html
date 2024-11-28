@@ -1,0 +1,117 @@
+<div class="casestats-container">
+  <h1>
+    CS2 Case Stats
+  </h1>
+  <h3>Status: <span id="status-text"></span></h3>
+  <div class="stats-top" id="stats-top">
+    <div class="rarity-stats">
+      <h3>Rarity Stats</h3>
+      <div class="stat gold">
+        <span class="stat-name">★ Gold (0)</span>
+        <div class="bar">
+          <div class="bar-inner" style="width: 0%;"></div>
+          <span class="bar-label"></span>
+        </div>
+      </div>
+      <div class="stat covert-grade">
+        <span class="stat-name">Covert (0)</span>
+        <div class="bar">
+          <div class="bar-inner" style="width: 0%;"></div>
+          <span class="bar-label"></span>
+        </div>
+      </div>
+      <div class="stat classified-grade">
+        <span class="stat-name">Classified (0)</span>
+        <div class="bar">
+          <div class="bar-inner" style="width: 0%;"></div>
+          <span class="bar-label"></span>
+        </div>
+      </div>
+      <div class="stat restricted-grade">
+        <span class="stat-name">Restricted (0)</span>
+        <div class="bar">
+          <div class="bar-inner" style="width: 0%;"></div>
+          <span class="bar-label"></span>
+        </div>
+      </div>
+      <div class="stat milspec-grade">
+        <span class="stat-name">Mil-Spec (0)</span>
+        <div class="bar">
+          <div class="bar-inner" style="width: 0%;"></div>
+          <span class="bar-label"></span>
+        </div>
+      </div>
+      <div class="stat stattrak">
+        <span class="stat-name">StatTrak™ (0)</span>
+        <div class="bar">
+          <div class="bar-inner" style="width: 0%;"></div>
+          <span class="bar-label"></span>
+        </div>
+      </div>
+    </div>
+    <div class="general-stats">
+      <h3>General Stats</h3>
+      <div class="stats-container">
+        <div class="stats-item">
+          <span class="stats-name">Total Opened Cases</span>
+          <h1 class="stats-value" id="total-cases">0</h1>
+        </div>
+        <div class="stats-item">
+          <span class="stats-name">Total Cash "Invested"</span>
+          <h1 class="stats-value" id="total-cash-invested">$0</h1>
+        </div>
+        <div class="stats-item">
+          <span class="stats-name">Total Cases Since Last Gold</span>
+          <h1 class="stats-value" id="cases-since-last-gold">0</h1>
+        </div>
+        <div class="stats-item">
+          <span class="stats-name">Most Opened Case</span>
+          <h3 class="stats-value" id="most-opened-case">...</h3>
+        </div>
+      </div>
+      <div class="last-pulled-golds">
+        <h3>Last Pulled Golds</h3>
+        <div class="lpg-container">
+          <!-- pulled item -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stats-bottom" id="stats-bottom">
+    <h3 class="title">Last Pulled Items</h3>
+    <div class="last-pulled-items">
+      <div class="lpi-container">
+        <!-- pulled item -->
+      </div>
+    </div>
+    <span class="lpi-warning">*Items are fetched from most recent to oldest</span>
+  </div>
+  <div class="fetch-container">
+    <button
+      type="button"
+      id="fetch-button"
+      class="fetch-button"
+    >
+      Load Case Stats
+    </button>
+  </div>
+  <footer class="footer">
+    <a 
+      class="footer-item" 
+      href="https://github.com/joaopugsley/casestats-ext" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </a>
+    <a 
+      class="footer-item" 
+      href="https://twitter.com/nityx64" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      Twitter
+    </a>
+    <span id="version"></span>
+  </footer>
+</div>
