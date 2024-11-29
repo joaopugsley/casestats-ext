@@ -51,37 +51,37 @@
         }
       }
 
-      > .gold {
+      > .gold-items {
         .bar-inner {
           background: #ffe600;
         }
       }
 
-      > .stattrak {
+      > .stattrak-items {
         .bar-inner {
           background: #cf6a32;
         }
       }
 
-      > .covert-grade {
+      > .covert-items {
         .bar-inner {
           background: #eb4b4b;
         }
       }
 
-      > .classified-grade {
+      > .classified-items {
         .bar-inner {
           background: #d32ee6;
         }
       }
 
-      > .restricted-grade {
+      > .restricted-items {
         .bar-inner {
           background: #8847ff;
         }
       }
 
-      > .milspec-grade {
+      > .milspec-items {
         .bar-inner {
           background: #4b69ff;
         }
@@ -223,10 +223,10 @@
 
   > .fetch-container {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-direction: row;
+    gap: 6px;
 
-    .fetch-button {
+    .btn-primary {
       width: fit-content;
       padding: 4px 12px;
       background: #1a9fff;
@@ -236,9 +236,15 @@
       border: none;
       cursor: pointer;
 
-      &:hover {
+      &:hover:not(:disabled) {
         color: #ffffff;
         background: #00bbff;
+      }
+
+      &:disabled {
+        opacity: 50%;
+        color: #959595;
+        transition: all 0.05s ease-in-out;
       }
     }
   }

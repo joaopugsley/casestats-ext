@@ -1,4 +1,4 @@
-import { initializeCaseStats } from "./scripts/case-stats";
+import { initializeCaseStats } from "./scripts/case-stats/main";
 
 function initializeContent() {
   initializeCaseStats();

@@ -6,42 +6,42 @@
   <div class="stats-top" id="stats-top">
     <div class="rarity-stats">
       <h3>Rarity Stats</h3>
-      <div class="stat gold">
+      <div class="stat gold-items">
         <span class="stat-name">★ Gold (0)</span>
         <div class="bar">
           <div class="bar-inner" style="width: 0%;"></div>
           <span class="bar-label"></span>
         </div>
       </div>
-      <div class="stat covert-grade">
+      <div class="stat covert-items">
         <span class="stat-name">Covert (0)</span>
         <div class="bar">
           <div class="bar-inner" style="width: 0%;"></div>
           <span class="bar-label"></span>
         </div>
       </div>
-      <div class="stat classified-grade">
+      <div class="stat classified-items">
         <span class="stat-name">Classified (0)</span>
         <div class="bar">
           <div class="bar-inner" style="width: 0%;"></div>
           <span class="bar-label"></span>
         </div>
       </div>
-      <div class="stat restricted-grade">
+      <div class="stat restricted-items">
         <span class="stat-name">Restricted (0)</span>
         <div class="bar">
           <div class="bar-inner" style="width: 0%;"></div>
           <span class="bar-label"></span>
         </div>
       </div>
-      <div class="stat milspec-grade">
+      <div class="stat milspec-items">
         <span class="stat-name">Mil-Spec (0)</span>
         <div class="bar">
           <div class="bar-inner" style="width: 0%;"></div>
           <span class="bar-label"></span>
         </div>
       </div>
-      <div class="stat stattrak">
+      <div class="stat stattrak-items">
         <span class="stat-name">StatTrak™ (0)</span>
         <div class="bar">
           <div class="bar-inner" style="width: 0%;"></div>
@@ -90,9 +90,19 @@
     <button
       type="button"
       id="fetch-button"
-      class="fetch-button"
+      class="btn-primary"
+      disabled="true"
     >
-      Load Case Stats
+      Load Case Stats (All Time)
+    </button>
+    <button
+      type="button"
+      id="reset-button"
+      class="btn-primary"
+      style="display: none;"
+      disabled="true"
+    >
+      Reset Case Stats (Clears Data)
     </button>
   </div>
   <footer class="footer">
