@@ -78,13 +78,39 @@
     </div>
   </div>
   <div class="stats-bottom" id="stats-bottom">
-    <h3 class="title">Last Pulled Items</h3>
+    <header class="lpi-top">
+      <h3 class="title">Last Pulled Items</h3>
+      <button
+        type="button"
+        id="reverse-button"
+        class="btn-secondary"
+        data-tooltip-html="Reverse the order of the last pulled items"
+        data-reversed="false"
+      >
+        <svg 
+          aria-hidden="true"
+          class="w-4 h-4" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+          />
+        </svg>
+        <span class="btn-label">
+          Sort Order: Oldest → Newest
+        </span>
+      </button>
+    </header>
     <div class="last-pulled-items">
       <div class="lpi-container">
         <!-- pulled item -->
       </div>
     </div>
-    <span class="lpi-warning">*Items are fetched from most recent to oldest</span>
   </div>
   <div class="fetch-container">
     <button
@@ -92,6 +118,7 @@
       id="fetch-button"
       class="btn-primary"
       disabled="true"
+      data-tooltip-html="Load case statistics history for this SteamId"
     >
       Load Case Stats (All Time)
     </button>
@@ -101,6 +128,7 @@
       class="btn-primary"
       style="display: none;"
       disabled="true"
+      data-tooltip-html="Clear all stored case statistics for this SteamId"
     >
       Reset Case Stats (Clears Data)
     </button>
