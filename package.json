@@ -1,7 +1,7 @@
 {
     "name": "casestats-ext",
     "description": "Provides detailed stats about opened cases on CS2",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "author": "joaopugsley",
     "homepage": "https://github.com/joaopugsley/casestats-ext",
     "license": "MIT",
