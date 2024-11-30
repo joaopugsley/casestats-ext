@@ -40,8 +40,13 @@ export async function initializeStatsContainer() {
 
 function setupEventListeners(container: HTMLDivElement) {
   const fetchButton = container.querySelector("#fetch-button");
-  if (!fetchButton) return;
+  const resetButton = container.querySelector("#reset-button");
+  const reverseButton = container.querySelector("#reverse-button");
+  if (!fetchButton || !resetButton || !reverseButton) return;
+
   fetchButton.addEventListener("click", () => fetchInventoryHistory());
+  resetButton.addEventListener("click", () => resetCaseStats());
+  reverseButton.addEventListener("click", () => reverseSortOrder());
 }
 
 async function updateCurrentVersion(container: HTMLDivElement) {
@@ -71,16 +76,6 @@ async function loadStoredData() {
   (fetchButton as HTMLButtonElement).textContent = `Load Case Stats (Last Updated: ${new Date(lastUpdate).toLocaleString()})`;
 
   (resetButton as HTMLButtonElement).style.display = "flex";
-  resetButton.addEventListener("click", () => {
-    (resetButton as HTMLButtonElement).style.display = "none";
-    (fetchButton as HTMLButtonElement).textContent = "Load Case Stats (All Time)";
-    (document.querySelector(".lpg-container") as HTMLDivElement).innerHTML = "";
-    resetStoredData();
-    updateStatus("idle");
-    updateStatsContainer([]);
-    resetLastPulledItems();
-    setButtonsState(true);
-  });
 }
 
 export function updateStatus(status: Status) {
@@ -219,7 +214,6 @@ export async function addLastPulledItems(results: CaseResult[], prepend: boolean
     }
 
     if (result.receivedItemData.name.includes("★")) {
-      console.log(result);
       const goldContainer = document.querySelector(".last-pulled-golds > .lpg-container");
       if (!goldContainer) continue;
       goldContainer.insertBefore(pulledItem, goldContainer.firstChild);
@@ -227,10 +221,40 @@ export async function addLastPulledItems(results: CaseResult[], prepend: boolean
   }
 }
 
-function resetLastPulledItems() {
-  const lastPulledContainer = document.querySelector(".last-pulled-items > .lpi-container");
-  if (!lastPulledContainer) return;
-  lastPulledContainer.innerHTML = "";
+function resetCaseStats() {
+  const resetButtonEl = document.querySelector("#reset-button");
+  const fetchButtonEl = document.querySelector("#fetch-button");
+  if (!resetButtonEl || !fetchButtonEl) return;
+  const resetButton = (resetButtonEl as HTMLButtonElement);
+  const fetchButton = (fetchButtonEl as HTMLButtonElement);
+
+  resetButton.style.display = "none";
+  fetchButton.textContent = "Load Case Stats (All Time)";
+
+  (document.querySelector(".lpg-container") as HTMLDivElement).innerHTML = "";
+  (document.querySelector(".lpi-container") as HTMLDivElement).innerHTML = "";
+
+  resetStoredData();
+  updateStatus("idle");
+  updateStatsContainer([]);
+  setButtonsState(true);
+}
+
+function reverseSortOrder() {
+  const reverseButtonEl = document.querySelector("#reverse-button");
+  const reverseButtonLabelEl = document.querySelector("#reverse-button .btn-label");
+  const lastPulledItemsEl = document.querySelector(".lpi-container");
+  if (!reverseButtonEl || !reverseButtonLabelEl || !lastPulledItemsEl) return;
+  const reverseButton = (reverseButtonEl as HTMLButtonElement);
+  const reverseButtonLabel = (reverseButtonLabelEl as HTMLSpanElement);
+  const lastPulledItems = (lastPulledItemsEl as HTMLDivElement);
+
+  const isReversed = reverseButton.dataset.reversed === "true";
+  reverseButton.dataset.reversed = `${!isReversed}`;
+  reverseButtonLabel.textContent = isReversed ? "Sort Order: Oldest → Newest" : "Sort Order: Newest → Oldest";
+
+  lastPulledItems.classList.toggle("reversed");
+  lastPulledItems.scrollLeft = -lastPulledItems.scrollWidth;
 }
 
 export function parseHistoryPage(page: InventoryHistoryResponse) {

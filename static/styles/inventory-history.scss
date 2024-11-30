@@ -169,6 +169,22 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+
+    > .lpi-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      > #reverse-button {
+        > svg {
+          width: 16px;
+          height: 16px;
+        }
+
+        font-size: 12px;
+      }
+    }
     
     > .last-pulled-items {
       display: flex;
@@ -178,14 +194,6 @@
       min-height: 60px;
       width: 100%;
       overflow: hidden;
-
-      > .title {
-        width: fit-content;
-        height: fit-content;
-        margin-left: 12px;
-        font-size: 12px;
-        text-wrap: nowrap;
-      }
 
       > .lpi-container {
         display: flex;
@@ -197,17 +205,22 @@
         padding: 8px;
         padding-bottom: 2px !important;
 
+        &.reversed {
+          flex-direction: row-reverse;
+        }
+
         > .pulled-item {
           display: flex;
           align-items: center;
           background: rgba(0, 0, 0, 0.3);
           box-sizing: border-box !important;
           border-radius: 6px;
-          min-width: 240px;
+          min-width: fit-content !important;
+          width: fit-content !important;
           min-height: 100px;
           height: 100px;
           max-height: 100px;
-          padding: 8px;
+          padding: 8px 18px;
           gap: 12px;
         
           > .item-image {
@@ -215,6 +228,10 @@
             height: 65px;
             object-fit: cover;
             object-position: center;
+          }
+
+          > .item-name {
+            width: fit-content;
           }
         }
       }
@@ -225,28 +242,6 @@
     display: flex;
     flex-direction: row;
     gap: 6px;
-
-    .btn-primary {
-      width: fit-content;
-      padding: 4px 12px;
-      background: #1a9fff;
-      color: #e5e4dc;
-      transition: all 0.25s ease-in-out;
-      outline: none;
-      border: none;
-      cursor: pointer;
-
-      &:hover:not(:disabled) {
-        color: #ffffff;
-        background: #00bbff;
-      }
-
-      &:disabled {
-        opacity: 50%;
-        color: #959595;
-        transition: all 0.05s ease-in-out;
-      }
-    }
   }
 
   > .footer {
