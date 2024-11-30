@@ -3,7 +3,7 @@
     "name": "CS2 Case Stats - SteamTools",
     "short_name": "CS2 Case Stats",
     "description": "Provides detailed stats about opened cases on CS2",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "joaopugsley",
     "icons": {
         "16": "assets/icons/icon-16.png",
@@ -11,8 +11,8 @@
         "128": "assets/icons/icon-128.png"
     },
     "permissions": [
-        "storage",
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
     "background": {
         "service_worker": "background.js"
