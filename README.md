@@ -28,7 +28,7 @@
 ## Installation
 
 ### Last released versions
-- Chrome Web Store (coming soon)
+- [Chrome Web Store](https://chromewebstore.google.com/detail/cs2-case-stats-steamtools/liijobbiponnejejcfpbbmkanlnhhkoo)
 - Firefox Add-ons (coming soon)
 
 ### For Development
